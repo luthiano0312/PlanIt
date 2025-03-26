@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 80%);
+    height: 100vh;
+    width: 100vw;
+    font-family: sans-serif;
+}
+
+#calender {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    aspect-ratio: 1/1; /*mantem a proporcão*/
+    background-color: white;
+}
+
+#calenderHead {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    height: 20vh;
+}
+
+#ContainerBackFor {
+    gap: 20px;
+}
+
+#ContainerMonth {
+    width: 150px;
+    text-align: center;
+}
+
+#ContainerToday {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#buttonToday {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 17.5px;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+}
+#buttonToday:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 40%);
+}
+
+#calenderBody {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#ContainerWeekDay {
+    display: flex;
+    flex-grow: 1; /* cresce para ocupar o espaço restante*/
+}
+
+#ContainerDay {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.widthContainerBackFor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.buttonBackFor {
+    background-color:hsl(0, 0%, 30%);
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    height: 50px;
+    border: none;
+    color: white;
+    font-size: 2rem;
+}
+.buttonBackFor:hover {
+    background-color:hsl(0, 0%, 40%);
+}
+
+.weekDay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(0, 0%, 90%);
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    aspect-ratio: 1/1;
+    padding: 5px;
+}
+
+.border {
+    border: 1px solid hsl(0, 0%, 80%);
+}

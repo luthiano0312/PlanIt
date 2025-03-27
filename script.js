@@ -10,18 +10,38 @@ let weekday = weekdays[today.getDay()];
 
 let monthHTML = document.getElementById("month");
 let todayHTML = document.getElementById("today");
+let days = document.getElementsByClassName("day");
 
-if ((yearNum % 4 === 0 && yearNum % 100 !== 0) || (yearNum % 400 === 0)) {
-    let months = [31,29,31,30,31,30,31,30,31,30,31,30];
-}else {
-    let months = [31,28,31,30,31,30,31,30,31,30,31,30];
+
+
+function dayMonth() {
+    let dateToday = String(yearNum) + "-" + String(today.getMonth() + 1 + count) + "-1";
+    let firstDayMonth = new Date(dateToday);
+    let firstWeekDayMonthIndex = firstDayMonth.getDay();
+
+    if ((yearNum % 4 === 0 && yearNum % 100 !== 0) || (yearNum % 400 === 0)) {
+        let months = [31,29,31,30,31,30,31,30,31,30,31,30];
+        for (let i = 0; i < 42; i++) {
+            days[i].textContent = "";
+        }
+
+        for (let i = 0; i < months[today.getMonth() + count]; i++) {
+            days[firstWeekDayMonthIndex].textContent = "a";
+        }
+    }else {
+        let months = [31,28,31,30,31,30,31,30,31,30,31,30];
+        for (let i = 0; i < 42; i++) {
+            days[i].textContent = "";
+        }
+
+        for (let i = 0; i < months[today.getMonth() + count]; i++) {
+            days[firstWeekDayMonthIndex + i].textContent = i + 1;
+        }
+
+
+    }
+
 }
-
-let nday = 0;
-
-// while (nday < 1) {
-    
-// }
 
 function nowdate() {
     let monthNum = today.getMonth() + 1;
@@ -73,7 +93,6 @@ function nowdate() {
 
     
     monthHTML.textContent = month;
-    console.log(count,month);
 }
 
 function nextMonth() {
@@ -86,4 +105,5 @@ function previousMonth(params) {
     nowdate();
 }
 nowdate();
+dayMonth()
 todayHTML.textContent =  day + " | " + month;

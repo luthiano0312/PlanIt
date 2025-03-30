@@ -10,9 +10,9 @@
     <div id="calender">
         <div id="calenderHead">
             <div id="ContainerBackFor" class="widthContainerBackFor">
-                <button id="backward" class="buttonBackFor" onclick="previousMonth(); dayMonth()"><</button>
+                <button id="backward" class="buttonBackFor" onclick="previousMonth(); dayMonth(); animationLeft()"><</button>
 
-                <button id="forward" class="buttonBackFor" onclick="nextMonth(); dayMonth()">></button>
+                <button id="forward" class="buttonBackFor" onclick="nextMonth(); dayMonth(); animationRight()">></button>
             </div>
 
             <div id="ContainerMonth">
@@ -20,7 +20,7 @@
             </div>
 
             <div id="ContainerToday" class="widthContainerBackFor">
-                <button id="buttonToday">Hoje</button>
+                <button id="buttonToday" onclick="resetCount()">Hoje</button>
 
                 <p id="today"></p>
             </div>
